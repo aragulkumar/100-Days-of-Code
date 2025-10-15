@@ -4,6 +4,8 @@ import os
 
 THEME_COLOR = "#375362"
 
+
+
 class QuizInterface:
 
     def __init__(self, quiz_brain: QuizBrain):
@@ -39,7 +41,7 @@ class QuizInterface:
         self.true_button = Button(image=self.true_image, highlightthickness=0)
         self.true_button.grid(row=2, column=0)
 
-        self.false_button = Button(image=self.false_image, highlightthickness=0)
+        self.false_button = Button(image=self.false_image, highlightthickness=0, command=Fl)
         self.false_button.grid(row=2, column=1)
 
         self.get_next_question()

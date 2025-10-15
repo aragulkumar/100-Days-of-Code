@@ -1,8 +1,9 @@
 from tkinter import *
 from quiz_brain import QuizBrain
+import os
 
 THEME_COLOR = "#375362"
-
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 class QuizInterface:
 
@@ -26,11 +27,11 @@ class QuizInterface:
         )
         self.canvas.grid(row=1, column=0, columnspan=2, pady=50)
 
-        true_image = PhotoImage(file="images/true.png")
+        true_image = PhotoImage(file=os.path.join(BASE_DIR, "images", "true.png"))
         self.true_button = Button(image=true_image, highlightthickness=0, command=self.true_pressed)
         self.true_button.grid(row=2, column=0)
 
-        false_image = PhotoImage(file="images/false.png")
+        false_image = PhotoImage(file=os.path.join(BASE_DIR, "images", "false.png"))
         self.false_button = Button(image=false_image, highlightthickness=0, command=self.false_pressed)
         self.false_button.grid(row=2, column=1)
 
